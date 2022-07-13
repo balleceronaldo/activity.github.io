@@ -1,0 +1,17 @@
+[
+  {
+    "title":"The Book of Genesis",
+    "author":"Moses",
+    "alreadyRead":1
+  },
+  {
+    "title":"The Book of Romans",
+    "author":"Paul",
+    "alreadyRead":0
+  },
+  {
+    "title":"The Book Psalms",
+    "author":"David",
+    "alreadyRead":1
+  }
+]

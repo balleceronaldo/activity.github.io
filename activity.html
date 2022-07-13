@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 💪</title>
+</head>
+<body>
+  
+  <button id="button1">Get Recipe 🍞🍗🍜</button>
+  <br><br>
+  <h1>Recipe</h1>
+  <div id="user"></div>
+
+
+  <script>
+    document.getElementById('button1').addEventListener('click', loadUser);
+
+    function loadUser(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'user.json', true);
+
+      xhr.onload = function(){
+        if(this.status == 200){
+          var user = JSON.parse(this.responseText);
+          
+          var output = '';
+
+          output += '<ul>' +
+            '<li>Title: '+user.title+'</li>'+
+            '<li>Serving: '+user.serving+'</li>'+
+            '<li>Ingridients: '+'</li>'+
+            '<li> '+user.ingridient[0]+'</li>'+
+            '<li> '+user.ingridient[1]+'</li>'+
+            '<li> '+user.ingridient[2]+'</li>'+
+            '</ul>';
+            document.getElementById('user').innerHTML = output;
+
+            console.log(user.title);
+            console.log(user.serving);
+            console.log(user.ingridient[0]);
+            console.log(user.ingridient[1]);
+            console.log(user.ingridient[2]);
+        }
+      }
+      xhr.send();
+    }
+//3
+    const greet = (name) => {
+      const message =  `Hey ${name}?`;
+      return message;
+    }
+//4
+    const arr = [5,15,45];
+
+    const average = arr.reduce((accumulator, value) => accumulator + value, 0)/arr.length;
+
+    console.log(average);
+
+    const counterFunc = (counter) => {
+      if(counter>100){
+        counter = 0;
+      }else {
+        counter++;
+      }
+      return counter;
+    }
+
+  </script>
+</body>
+</html>
